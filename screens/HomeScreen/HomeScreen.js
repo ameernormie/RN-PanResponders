@@ -9,9 +9,6 @@ import {
   TouchableOpacity,
   View
 } from "react-native";
-import { WebBrowser } from "expo";
-
-import { MonoText } from "../../components/StyledText";
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -21,7 +18,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Animating Properties</Text>
+        <Text style={styles.title}>PanResponders</Text>
         <View
           style={{
             alignSelf: "stretch",
@@ -30,7 +27,7 @@ export default class HomeScreen extends React.Component {
           }}
         >
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Opacity")}
+            onPress={() => this.props.navigation.navigate("Basic")}
             style={{
               padding: 10,
               borderRadius: 7,
@@ -38,10 +35,10 @@ export default class HomeScreen extends React.Component {
               backgroundColor: "tomato"
             }}
           >
-            <Text style={{ fontSize: 15 }}>Opacity</Text>
+            <Text style={{ fontSize: 15 }}>Basic Implementation</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Translate")}
+            onPress={() => this.props.navigation.navigate("BasicWithDecay")}
             style={{
               padding: 10,
               borderRadius: 7,
@@ -49,40 +46,7 @@ export default class HomeScreen extends React.Component {
               backgroundColor: "tomato"
             }}
           >
-            <Text style={{ fontSize: 15 }}>Translate</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Scale")}
-            style={{
-              padding: 10,
-              borderRadius: 7,
-              marginBottom: 15,
-              backgroundColor: "tomato"
-            }}
-          >
-            <Text style={{ fontSize: 15 }}>Scale</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("AbsolutePosition")}
-            style={{
-              padding: 10,
-              borderRadius: 7,
-              marginBottom: 15,
-              backgroundColor: "tomato"
-            }}
-          >
-            <Text style={{ fontSize: 15 }}>Absolute Position</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Interpolate")}
-            style={{
-              padding: 10,
-              borderRadius: 7,
-              marginBottom: 15,
-              backgroundColor: "tomato"
-            }}
-          >
-            <Text style={{ fontSize: 15 }}>Interpolation</Text>
+            <Text style={{ fontSize: 15 }}>Basic With Decay</Text>
           </TouchableOpacity>
         </View>
       </View>
