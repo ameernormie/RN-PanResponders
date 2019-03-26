@@ -61,6 +61,17 @@ export default class HomeScreen extends React.Component {
           >
             <Text style={{ fontSize: 15 }}>Understanding Capture</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("KittenCards")}
+            style={{
+              padding: 10,
+              borderRadius: 7,
+              marginBottom: 15,
+              backgroundColor: "tomato"
+            }}
+          >
+            <Text style={{ fontSize: 15 }}>Kitten Cards</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );

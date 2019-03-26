@@ -4,6 +4,7 @@ import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import Basic from "../screens/Basic/BasicImplementatiion";
 import BasicWithDecay from "../screens/BasicWithDecay/BasicWithDecay";
 import UnderstandingCapture from "../screens/UnderstandingCapture/UnderstatndingCapture";
+import KittenCards from "../screens/KittenCards/KittenCards";
 
 const RootStack = createStackNavigator(
   {
@@ -18,6 +19,9 @@ const RootStack = createStackNavigator(
     },
     UnderstandingCapture: {
       screen: UnderstandingCapture
+    },
+    KittenCards: {
+      screen: KittenCards
     }
   },
 
