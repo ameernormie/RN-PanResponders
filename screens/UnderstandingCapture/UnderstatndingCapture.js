@@ -52,7 +52,6 @@ class UnderstandingCapture extends React.Component {
     this._panResponder = PanResponder.create({
       onMoveShouldSetPanResponder: (evt, gestureState) => true,
       onPanResponderMove: (evt, gestureState) => {
-        const drag = getDirectionAndColor(gestureState);
         console.log("drag ", gestureState.dx);
         this.setState({
           zone: drag
