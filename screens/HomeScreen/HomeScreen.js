@@ -83,6 +83,17 @@ export default class HomeScreen extends React.Component {
           >
             <Text style={{ fontSize: 15 }}>Staggered Head</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("StackingCards")}
+            style={{
+              padding: 10,
+              borderRadius: 7,
+              marginBottom: 15,
+              backgroundColor: "tomato"
+            }}
+          >
+            <Text style={{ fontSize: 15 }}>Stacking Cards</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
