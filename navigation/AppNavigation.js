@@ -5,6 +5,7 @@ import Basic from "../screens/Basic/BasicImplementatiion";
 import BasicWithDecay from "../screens/BasicWithDecay/BasicWithDecay";
 import UnderstandingCapture from "../screens/UnderstandingCapture/UnderstatndingCapture";
 import KittenCards from "../screens/KittenCards/KittenCards";
+import StaggeredHead from "../screens/StaggeredHead/StaggeredHead";
 
 const RootStack = createStackNavigator(
   {
@@ -22,6 +23,9 @@ const RootStack = createStackNavigator(
     },
     KittenCards: {
       screen: KittenCards
+    },
+    StaggeredHeads: {
+      screen: StaggeredHead
     }
   },
 
