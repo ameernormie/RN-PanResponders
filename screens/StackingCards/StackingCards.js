@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { Animated, View, Text, StyleSheet, PanResponder } from "react-native";
 
 class StackingCards extends React.Component {
   state = {
@@ -28,12 +28,46 @@ class StackingCards extends React.Component {
         id: 6,
         name: "Umar"
       }
-    ]
+    ],
+    animation: new Animated.Value(0)
   };
+
+  static navigationOptions = {
+    header: null
+  };
+
+  componentWillMount() {
+    this.panResponder = PanResponder.create({
+      onMoveShouldSetPanResponder: (e, gesture) => true,
+      onStartShouldSetPanResponder: (e, gesture) => true,
+      onPanResponderMove: Animated.event([
+        null,
+        {
+          dy: this.state.animation
+        }
+      ]),
+      onPanResponderRelease: (e, gesture) => {
+        this.state.animation.setValue(0);
+      }
+    });
+  }
+
   render() {
+    const animatedStyle = {
+      transform: [{ translateY: this.state.animation }]
+    };
+
     return (
       <View style={styles.container}>
-        <Text>Cards</Text>
+        {this.state.items.map((item, index) => {
+          return (
+            <Animated.View
+              key={index}
+              style={[styles.card, animatedStyle]}
+              {...this.panResponder.panHandlers}
+            />
+          );
+        })}
       </View>
     );
   }
@@ -44,6 +78,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
+  },
+  card: {
+    width: 300,
+    height: 400,
+    backgroundColor: "#eee"
   }
 });
 
